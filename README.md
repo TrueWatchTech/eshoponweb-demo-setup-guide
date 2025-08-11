@@ -158,8 +158,11 @@ Restart DataKit:
 datakit service -R
 ```
 
-### B.3 Update web.config for TrueWatch  
-Go to `C:\inetpub\wwwroot\eShopOnWeb\src\Web\web.config` and add:
+### B.3 Set Up web.config for TrueWatch  
+
+1. Copy the `web.config` file from this repository to `C:\inetpub\wwwroot\eShopOnWeb\src\Web\`
+
+2. Add the following environment variables to the `web.config` file:
 ```xml
 <environmentVariable name="DD_AGENT_HOST" value="127.0.0.1" />
 <environmentVariable name="DD_TRACE_AGENT_PORT" value="9529" />
