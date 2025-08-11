@@ -124,10 +124,7 @@ Install SSMS when prompted.
 3. Create **CatalogDb** Database  
    - Select **New Query**  
    - Paste and execute:  
-     ```sql
-CREATE DATABASE [CatalogDb];
-GO
-```  
+     ```CREATE DATABASE [CatalogDb]; GO```
    ![Create Database](./images/5.png)
 
 ### A.9 Recycle IIS & Verify  
