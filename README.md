@@ -159,7 +159,7 @@ datakit service -R
 ```
 
 ### B.3 Update web.config for TrueWatch  
-Go to `C:\inetpub\wwwroot\eShopOnWeb\publish\web.config` and add:
+Go to `C:\inetpub\wwwroot\eShopOnWeb\src\Web\web.config` and add:
 ```xml
 <environmentVariable name="DD_AGENT_HOST" value="127.0.0.1" />
 <environmentVariable name="DD_TRACE_AGENT_PORT" value="9529" />
@@ -172,6 +172,13 @@ Go to `C:\inetpub\wwwroot\eShopOnWeb\publish\web.config` and add:
 2. Edit `_Layout.cshtml` at `C:\inetpub\wwwroot\eShopOnWeb\src\Web\Views\Shared\_Layout.cshtml`, paste under `<head>`.  
 ![Create RUM App](./images/7.png)  
 ![Add RUM Script](./images/8.png)
+
+Publish the changes and restart the app pool:
+```powershell
+cd C:\inetpub\wwwroot\eShopOnWeb\src\Web
+dotnet publish -c Release -o C:\inetpub\wwwroot\eShopOnWeb\publish
+Restart-WebAppPool eShopOnWebPool
+```
 
 ### B.5 Set Up .NET APM Tracing  
 1. Install .NET Tracer MSI (e.g., `datadog-dotnet-apm-3.21.0-x64.msi`).  
